@@ -9,11 +9,7 @@ module.exports = {
             const loggedDev = await Dev.findById(user);
             const targetDev = await Dev.findById(devId);
 
-            loggedDev.likes.push(targetDev._id);
-
-            if(targetDev.likes.includes(loggedDev._id)){
-                console.log("MATH");
-            }
+            loggedDev.dislikes.push(targetDev._id);
 
             await loggedDev.save();
 
